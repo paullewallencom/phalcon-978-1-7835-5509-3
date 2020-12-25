@@ -1,0 +1,6 @@
+{
+    "require": {
+        "phalcon/incubator": "dev-master",
+        "crada/php-apidoc": "@dev"
+    }
+}

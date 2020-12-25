@@ -1,0 +1,11 @@
+.buildpath
+.project
+.settings
+cache
+logs
+vendor
+composer.phar
+public/assets/default/bower_components
+public/assets/default/css/backoffice.css
+public/assets/default/js/backoffice.js
+public/assets/default/prod

@@ -1,0 +1,3160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="php-apidoc - apid documenation generator">
+    <meta name="author" content="Calin Rada">
+    <title>Learning Phalcon API</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body      { padding-top: 70px; margin-bottom: 15px; }
+        .tab-pane { padding-top: 10px; }
+        .mt0      { margin-top: 0px; }
+        .footer   { font-size: 12px; color: #666; }
+        .label    { display: inline-block; min-width: 65px; padding: 0.3em 0.6em 0.3em; }
+        .string   { color: green; }
+        .number   { color: darkorange; }
+        .boolean  { color: blue; }
+        .null     { color: magenta; }
+        .key      { color: red; }
+        .popover  { max-width: 400px; max-height: 400px; overflow-y: auto;}
+    </style>
+</head>
+<body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Learning Phalcon API</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    Api key: <a href="javascript:void(0);" class="tooltipP" data-toggle="tooltip" title="Api key header with api key (key) and api key value (value) "><span class="glyphicon glyphicon-info-sign"></span></a>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="key" id="apikey_key">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="value" id="apikey_value">
+                </div>
+                <div class="form-group" style="margin-left: 10px;">
+                    Basic Auth: <a href="javascript:void(0);" class="tooltipP" data-toggle="tooltip" title="If needed"><span class="glyphicon glyphicon-info-sign"></span></a>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="Username" id="basic_auth_username">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="Password" id="basic_auth_password">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-success btn-sm tooltipP" data-toggle="tooltip" title="Save API key and Basic Auth data in localstorage" id="save_auth_data">
+                        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h5>Api URL</h5>
+                <input id="apiUrl" type="text" class="form-control input-sm" placeholder="http://api.mydomain.tld">
+            </div>
+        </div>
+        <hr>
+        <div class="panel-group" id="accordion">
+            <h2>Articles</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion0" href="#collapseOne0"> /articles</a>
+        </h4>
+    </div>
+    <div id="collapseOne0" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab0">
+                <li class="active"><a href="#info0" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox0" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample0" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info0">
+                    <div class="well">
+                    Retrieve a list of articles
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>p</td>
+    <td>integer</td>
+    <td>No</td>
+    <td>Page number</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox0">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/articles" method="get" name="form0" id="form0">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="p" placeholder="p" name="p">
+</div>
+    <button type="submit" class="btn btn-success send" rel="0">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers0"></pre>
+                                <pre id="response0"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample0">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header0">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response0">{
+  'items': [{
+      'id':'int',
+      'article_user_id':'int',
+      'article_is_published':'int',
+      'article_created_at':'string',
+      'article_updated_at':'string',
+      'article_translations':[{
+          'article_translation_short_title':'string',
+          'article_translation_long_title':'string',
+          'article_translation_slug':'string',
+          'article_translation_description':'string',
+          'article_translation_lang':'string'
+      }],
+      'article_categories':[{
+          'id':'int',
+          'category_translations':[{
+              'category_translation_name':'string',
+              'category_translation_slug':'string',
+              'category_translation_lang':'string'
+          }]
+      }],
+      'article_hashtags':[{
+          'id':'int',
+          'hashtag_name':'string'
+      }],
+      'article_author':{
+          'user_first_name':'string',
+          'user_last_name':'string',
+          'user_email':'string'
+      }
+  }],
+  'before':'int',
+  'first':'int',
+  'next':'int',
+  'last':'int',
+  'current':'int',
+  'total_pages':'int',
+  'total_items':'int',
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1"> /articles/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne1" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab1">
+                <li class="active"><a href="#info1" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox1" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample1" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info1">
+                    <div class="well">
+                    Retrieve a single article
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Article id</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox1">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/articles/{id}" method="get" name="form1" id="form1">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="id" placeholder="id" name="id">
+</div>
+    <button type="submit" class="btn btn-success send" rel="1">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers1"></pre>
+                                <pre id="response1"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header1">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response1">{
+  'items': [{
+      'id':'int',
+      'article_user_id':'int',
+      'article_is_published':'int',
+      'article_created_at':'string',
+      'article_updated_at':'string',
+      'article_translations':[{
+          'article_translation_short_title':'string',
+          'article_translation_long_title':'string',
+          'article_translation_slug':'string',
+          'article_translation_description':'string',
+          'article_translation_lang':'string'
+      }],
+      'article_categories':[{
+          'id':'int',
+          'category_translations':[{
+              'category_translation_name':'string',
+              'category_translation_slug':'string',
+              'category_translation_lang':'string'
+          }]
+      }],
+      'article_hashtags':[{
+          'id':'int',
+          'hashtag_name':'string'
+      }],
+      'article_author':{
+          'user_first_name':'string',
+          'user_last_name':'string',
+          'user_email':'string'
+      }
+  }],
+  'before':'int',
+  'first':'int',
+  'next':'int',
+  'last':'int',
+  'current':'int',
+  'total_pages':'int',
+  'total_items':'int',
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion2" href="#collapseOne2"> /articles/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne2" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab2">
+                <li class="active"><a href="#info2" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox2" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample2" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info2">
+                    <div class="well">
+                    Update an article
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Article id</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox2">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/articles/{id}" method="put" name="form2" id="form2">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="id" placeholder="id" name="id">
+</div>
+    <button type="submit" class="btn btn-success send" rel="2">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers2"></pre>
+                                <pre id="response2"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample2">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header2">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response2">1</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion3" href="#collapseOne3"> /articles/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne3" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab3">
+                <li class="active"><a href="#info3" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox3" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample3" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info3">
+                    <div class="well">
+                    Delete an article
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Article id</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox3">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/articles/{id}" method="delete" name="form3" id="form3">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="id" placeholder="id" name="id">
+</div>
+    <button type="submit" class="btn btn-success send" rel="3">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers3"></pre>
+                                <pre id="response3"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header3">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response3">1</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion4" href="#collapseOne4"> /articles</a>
+        </h4>
+    </div>
+    <div id="collapseOne4" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab4">
+                <li class="active"><a href="#info4" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox4" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample4" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info4">
+                    <div class="well">
+                    Create a new article
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>article_user_id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>User id</td>
+</tr>
+
+<tr>
+    <td>article_is_published</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Article is published or not</td>
+</tr>
+
+<tr>
+    <td>article_translation_short_title</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Article title</td>
+</tr>
+
+<tr>
+    <td>article_translation_long_title</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Article long title</td>
+</tr>
+
+<tr>
+    <td>article_translation_description</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Article content/description</td>
+</tr>
+
+<tr>
+    <td>article_translation_slug</td>
+    <td>string</td>
+    <td>No</td>
+    <td>Article slug</td>
+</tr>
+
+<tr>
+    <td>article_translation_lang</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Article trnslation language</td>
+</tr>
+
+<tr>
+    <td>categories</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>CSV values of categories ids. Ex: 5,18,32</td>
+</tr>
+
+<tr>
+    <td>hashtags</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>CSV values of hashtags ids. Ex: 15,142,11</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox4">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/articles" method="post" name="form4" id="form4">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="article_user_id" placeholder="article_user_id" name="article_user_id">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="article_is_published" placeholder="article_is_published" name="article_is_published">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="article_translation_short_title" placeholder="article_translation_short_title" name="article_translation_short_title">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="article_translation_long_title" placeholder="article_translation_long_title" name="article_translation_long_title">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="article_translation_description" placeholder="article_translation_description" name="article_translation_description">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="article_translation_slug" placeholder="article_translation_slug" name="article_translation_slug">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="article_translation_lang" placeholder="article_translation_lang" name="article_translation_lang">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="categories" placeholder="categories" name="categories">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="hashtags" placeholder="hashtags" name="hashtags">
+</div>
+    <button type="submit" class="btn btn-success send" rel="4">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers4"></pre>
+                                <pre id="response4"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header4">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response4">{
+  'id': '24',
+  'article_user_id': 14,
+  'article_is_published': 1,
+  'article_created_at': '2015-03-12 16:42:17',
+  'article_updated_at': null,
+  'article_translations': [
+      {
+          'article_translation_short_title': 'Test article title',
+          'article_translation_long_title': 'Test article long title',
+          'article_translation_slug': 'test-article-slug',
+          'article_translation_description': 'Test article description',
+          'article_translation_lang': 'en'
+      }
+  ],
+  'article_categories': [
+      {
+          'id': '22',
+          'category_translations': [
+              {
+                  'category_translation_name': 'Coca-Cola',
+                  'category_translation_slug': 'coca-cola-22',
+                  'category_translation_lang': 'en'
+              }
+          ]
+      },
+      {
+          'id': '23',
+          'category_translations': [
+              {
+                  'category_translation_name': 'Facebook',
+                  'category_translation_slug': 'facebook-23',
+                  'category_translation_lang': 'en'
+              }
+          ]
+      }
+  ],
+  'article_hashtags': [
+      {
+          'id': '2',
+          'hashtag_name': 'phalcon'
+      },
+      {
+          'id': '3',
+          'hashtag_name': 'volt'
+      }
+  ],
+  'article_author': {
+      'user_first_name': 'John',
+      'user_last_name': 'Doe',
+      'user_email': 'john.doe@learning-phalcon.dev'
+  }
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div><h2>Hashtags</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion5" href="#collapseOne5"> /hashtags</a>
+        </h4>
+    </div>
+    <div id="collapseOne5" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab5">
+                <li class="active"><a href="#info5" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox5" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample5" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info5">
+                    <div class="well">
+                    Retrieve a list of hashtags
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>p</td>
+    <td>integer</td>
+    <td>No</td>
+    <td>Page number</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox5">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/hashtags" method="get" name="form5" id="form5">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="p" placeholder="p" name="p">
+</div>
+    <button type="submit" class="btn btn-success send" rel="5">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers5"></pre>
+                                <pre id="response5"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header5">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response5">{
+  'items': [{
+      'id':'int',
+      'hashtag_name':'int',
+      'hashtag_created_at':'string',
+      'hashtag_updated_at':'string'
+  }],
+  'before':'int',
+  'first':'int',
+  'next':'int',
+  'last':'int',
+  'current':'int',
+  'total_pages':'int',
+  'total_items':'int',
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion6" href="#collapseOne6"> /hashtags/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne6" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab6">
+                <li class="active"><a href="#info6" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox6" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample6" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info6">
+                    <div class="well">
+                    Retrieve a single hashtag
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Hashtag id</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox6">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/hashtags/{id}" method="get" name="form6" id="form6">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="id" placeholder="id" name="id">
+</div>
+    <button type="submit" class="btn btn-success send" rel="6">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers6"></pre>
+                                <pre id="response6"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header6">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response6">{
+  'items': [{
+      'id':'int',
+      'hashtag_name':'int',
+      'hashtag_created_at':'string',
+      'hashtag_updated_at':'string'
+  }],
+  'before':'int',
+  'first':'int',
+  'next':'int',
+  'last':'int',
+  'current':'int',
+  'total_pages':'int',
+  'total_items':'int',
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion7" href="#collapseOne7"> /hashtags/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne7" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab7">
+                <li class="active"><a href="#info7" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox7" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample7" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info7">
+                    <div class="well">
+                    Update hashtag
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Hashtag id</td>
+</tr>
+
+<tr>
+    <td>hashtag_name</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Hashtag name</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox7">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/hashtags/{id}" method="put" name="form7" id="form7">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="id" placeholder="id" name="id">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="hashtag_name" placeholder="hashtag_name" name="hashtag_name">
+</div>
+    <button type="submit" class="btn btn-success send" rel="7">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers7"></pre>
+                                <pre id="response7"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample7">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header7">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response7">{
+    'id':1,
+    'hashtag_name':'phalcon',
+    'hashtag_created_at':'2015-02-28 13:12:00',
+    'hashtag_updated_at':'2015-02-28 14:15:00'
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion8" href="#collapseOne8"> /hashtags/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne8" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab8">
+                <li class="active"><a href="#info8" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox8" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample8" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info8">
+                    <div class="well">
+                    Delete one hashtag
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Hashtag id</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox8">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/hashtags/{id}" method="delete" name="form8" id="form8">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="id" placeholder="id" name="id">
+</div>
+    <button type="submit" class="btn btn-success send" rel="8">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers8"></pre>
+                                <pre id="response8"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header8">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response8">1</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion9" href="#collapseOne9"> /hashtags</a>
+        </h4>
+    </div>
+    <div id="collapseOne9" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab9">
+                <li class="active"><a href="#info9" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox9" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample9" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info9">
+                    <div class="well">
+                    Create a new hashtag
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>hashtag_name</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Hashtag name</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox9">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/hashtags" method="post" name="form9" id="form9">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="hashtag_name" placeholder="hashtag_name" name="hashtag_name">
+</div>
+    <button type="submit" class="btn btn-success send" rel="9">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers9"></pre>
+                                <pre id="response9"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample9">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header9">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response9">{
+    'id':1,
+    'hashtag_name':'phalcon',
+    'hashtag_created_at':'2015-02-28 13:12:00',
+    'hashtag_updated_at':''
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div><h2>Categories</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion10" href="#collapseOne10"> /categories</a>
+        </h4>
+    </div>
+    <div id="collapseOne10" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab10">
+                <li class="active"><a href="#info10" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox10" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample10" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info10">
+                    <div class="well">
+                    Retrieve a list of categories
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>p</td>
+    <td>integer</td>
+    <td>No</td>
+    <td>Page number</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox10">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/categories" method="get" name="form10" id="form10">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="p" placeholder="p" name="p">
+</div>
+    <button type="submit" class="btn btn-success send" rel="10">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers10"></pre>
+                                <pre id="response10"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample10">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header10">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response10">{
+  'items': [{
+      'id':1,
+      'category_is_active':1,
+      'category_created_at':'2015-03-01 19:17:09',
+      'category_updated_at':'2015-03-01 19:17:09',
+      'category_translations': [{
+          'category_translation_name':'Phalcon',
+          'category_translation_slug':'phalcon',
+          'category_translation_lang':'en'
+      }]
+  }],
+  'before':'int',
+  'first':'int',
+  'next':'int',
+  'last':'int',
+  'current':'int',
+  'total_pages':'int',
+  'total_items':'int',
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion11" href="#collapseOne11"> /categories/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne11" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab11">
+                <li class="active"><a href="#info11" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox11" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample11" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info11">
+                    <div class="well">
+                    Retrieve a single category
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Category id</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox11">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/categories/{id}" method="get" name="form11" id="form11">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="id" placeholder="id" name="id">
+</div>
+    <button type="submit" class="btn btn-success send" rel="11">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers11"></pre>
+                                <pre id="response11"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample11">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header11">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response11">{
+  'items': [{
+      'id':1,
+      'category_is_active':1,
+      'category_created_at':'2015-03-01 19:17:09',
+      'category_updated_at':'2015-03-01 19:17:09',
+      'category_translations': [{
+          'category_translation_name':'Phalcon',
+          'category_translation_slug':'phalcon',
+          'category_translation_lang':'en'
+      }]
+  }],
+  'before':'int',
+  'first':'int',
+  'next':'int',
+  'last':'int',
+  'current':'int',
+  'total_pages':'int',
+  'total_items':'int',
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion12" href="#collapseOne12"> /categories/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne12" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab12">
+                <li class="active"><a href="#info12" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox12" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample12" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info12">
+                    <div class="well">
+                    Update category
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Category id</td>
+</tr>
+
+<tr>
+    <td>category_name</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Category name</td>
+</tr>
+
+<tr>
+    <td>category_slug</td>
+    <td>string</td>
+    <td>No</td>
+    <td>Category slug</td>
+</tr>
+
+<tr>
+    <td>category_lang</td>
+    <td>string</td>
+    <td>No</td>
+    <td>Category language</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox12">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/categories/{id}" method="put" name="form12" id="form12">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="id" placeholder="id" name="id">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="category_name" placeholder="category_name" name="category_name">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="category_slug" placeholder="category_slug" name="category_slug">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="category_lang" placeholder="category_lang" name="category_lang">
+</div>
+    <button type="submit" class="btn btn-success send" rel="12">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers12"></pre>
+                                <pre id="response12"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header12">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response12">{
+    'id':1,
+    'category_is_active':1,
+    'category_created_at':'2015-03-01 19:17:09',
+    'category_updated_at':'2015-03-01 19:17:09',
+    'category_translations': [{
+        'category_translation_name':'Phalcon',
+        'category_translation_slug':'phalcon',
+        'category_translation_lang':'en'
+    }]
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion13" href="#collapseOne13"> /categories/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne13" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab13">
+                <li class="active"><a href="#info13" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox13" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample13" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info13">
+                    <div class="well">
+                    Delete one category
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Category id</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox13">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/categories/{id}" method="delete" name="form13" id="form13">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="id" placeholder="id" name="id">
+</div>
+    <button type="submit" class="btn btn-success send" rel="13">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers13"></pre>
+                                <pre id="response13"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample13">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header13">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response13">1</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion14" href="#collapseOne14"> /categories</a>
+        </h4>
+    </div>
+    <div id="collapseOne14" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab14">
+                <li class="active"><a href="#info14" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox14" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample14" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info14">
+                    <div class="well">
+                    Create a new category
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>category_translation_name</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Category name</td>
+</tr>
+
+<tr>
+    <td>category_translation_slug</td>
+    <td>string</td>
+    <td>No</td>
+    <td>Category slug</td>
+</tr>
+
+<tr>
+    <td>category_translation_lang</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Category language (ISO 2 letter code)</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox14">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/categories" method="post" name="form14" id="form14">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="category_translation_name" placeholder="category_translation_name" name="category_translation_name">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="category_translation_slug" placeholder="category_translation_slug" name="category_translation_slug">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="category_translation_lang" placeholder="category_translation_lang" name="category_translation_lang">
+</div>
+    <button type="submit" class="btn btn-success send" rel="14">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers14"></pre>
+                                <pre id="response14"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample14">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header14">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response14">{
+    'id':1,
+    'category_is_active':1,
+    'category_created_at':'2015-03-01 19:17:09',
+    'category_updated_at':'2015-03-01 19:17:09',
+    'category_translations': [{
+        'category_translation_name':'Phalcon',
+        'category_translation_slug':'phalcon',
+        'category_translation_lang':'en'
+    }]
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div><h2>Users</h2>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion15" href="#collapseOne15"> /users</a>
+        </h4>
+    </div>
+    <div id="collapseOne15" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab15">
+                <li class="active"><a href="#info15" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox15" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample15" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info15">
+                    <div class="well">
+                    Retrieve a list of users
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>p</td>
+    <td>integer</td>
+    <td>No</td>
+    <td>Page number</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox15">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/users" method="get" name="form15" id="form15">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="p" placeholder="p" name="p">
+</div>
+    <button type="submit" class="btn btn-success send" rel="15">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers15"></pre>
+                                <pre id="response15"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample15">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header15">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response15">{
+  'items': [{
+      'id':1,
+      'user_first_name':'John',
+      'user_last_name':'Doe',
+      'user_email':'john.doe@learning-phalcon.dev',
+      'user_is_active':'1',
+      'user_created_at':'2015-03-01 19:17:09',
+      'user_updated_at':'2015-03-01 19:17:09',
+      'user_profile': [{
+          'id':'1',
+          'user_profile_user_id':'1',
+          'user_profile_location':'Barcelona',
+          'user_profile_created_at':'2015-03-01 19:17:09',
+          'user_profile_updated_at':'2015-03-01 19:17:09'
+      }]
+  }],
+  'before':1,
+  'first':1,
+  'next':1,
+  'last':1,
+  'current':1,
+  'total_pages':1,
+  'total_items':2
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion16" href="#collapseOne16"> /users/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne16" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab16">
+                <li class="active"><a href="#info16" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox16" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample16" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info16">
+                    <div class="well">
+                    Retrieve a single user
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>User id</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox16">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/users/{id}" method="get" name="form16" id="form16">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="id" placeholder="id" name="id">
+</div>
+    <button type="submit" class="btn btn-success send" rel="16">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers16"></pre>
+                                <pre id="response16"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample16">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header16">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response16">{
+  'items': [{
+      'id':1,
+      'user_first_name':'John',
+      'user_last_name':'Doe',
+      'user_email':'john.doe@learning-phalcon.dev',
+      'user_is_active':'1',
+      'user_created_at':'2015-03-01 19:17:09',
+      'user_updated_at':'2015-03-01 19:17:09',
+      'user_profile': [{
+          'id':'1',
+          'user_profile_user_id':'1',
+          'user_profile_location':'Barcelona',
+          'user_profile_created_at':'2015-03-01 19:17:09',
+          'user_profile_updated_at':'2015-03-01 19:17:09'
+      }]
+  }],
+  'before':1,
+  'first':1,
+  'next':1,
+  'last':1,
+  'current':1,
+  'total_pages':1,
+  'total_items':1
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion17" href="#collapseOne17"> /users/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne17" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab17">
+                <li class="active"><a href="#info17" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox17" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample17" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info17">
+                    <div class="well">
+                    Update category
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>User id</td>
+</tr>
+
+<tr>
+    <td>user_first_name</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>First name</td>
+</tr>
+
+<tr>
+    <td>user_last_name</td>
+    <td>string</td>
+    <td>No</td>
+    <td>Last name</td>
+</tr>
+
+<tr>
+    <td>user_email</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>A valid email</td>
+</tr>
+
+<tr>
+    <td>user_password</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Password</td>
+</tr>
+
+<tr>
+    <td>user_is_active</td>
+    <td>int</td>
+    <td>Yes</td>
+    <td>1 || 0</td>
+</tr>
+
+<tr>
+    <td>user_profile_location</td>
+    <td>string</td>
+    <td>No</td>
+    <td>User location (city, country, etc)</td>
+</tr>
+
+<tr>
+    <td>user_acl_role</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Acl role (Administrator, Guest, etc)</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox17">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/users/{id}" method="put" name="form17" id="form17">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="id" placeholder="id" name="id">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="user_first_name" placeholder="user_first_name" name="user_first_name">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="user_last_name" placeholder="user_last_name" name="user_last_name">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="user_email" placeholder="user_email" name="user_email">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="user_password" placeholder="user_password" name="user_password">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="user_is_active" placeholder="user_is_active" name="user_is_active">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="user_profile_location" placeholder="user_profile_location" name="user_profile_location">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="user_acl_role" placeholder="user_acl_role" name="user_acl_role">
+</div>
+    <button type="submit" class="btn btn-success send" rel="17">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers17"></pre>
+                                <pre id="response17"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample17">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header17">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response17">{
+    'id':1,
+    'user_first_name':'John',
+    'user_last_name':'Doe',
+    'user_email':'johndoe@domain.tld',
+    'user_is_active':1,
+    'user_created_at':'2015-03-01 19:17:09',
+    'user_updated_at':'2015-03-01 19:17:09',
+    'user_profile': {
+        'id':1,
+        'user_profile_user_id':1,
+        'user_profile_location':'Barcelona, Spain',
+        'user_profile_created_at':'2015-03-01 19:17:09',
+        'user_profile_updated_at':'2015-03-01 19:17:09',
+    }
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion18" href="#collapseOne18"> /users/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne18" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab18">
+                <li class="active"><a href="#info18" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox18" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample18" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info18">
+                    <div class="well">
+                    Delete one user
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>User id</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox18">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/users/{id}" method="delete" name="form18" id="form18">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="id" placeholder="id" name="id">
+</div>
+    <button type="submit" class="btn btn-success send" rel="18">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers18"></pre>
+                                <pre id="response18"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample18">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header18">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response18">1</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion19" href="#collapseOne19"> /users</a>
+        </h4>
+    </div>
+    <div id="collapseOne19" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab19">
+                <li class="active"><a href="#info19" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox19" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample19" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info19">
+                    <div class="well">
+                    Create a new user
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+<tr>
+    <td>user_first_name</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>First name</td>
+</tr>
+
+<tr>
+    <td>user_last_name</td>
+    <td>string</td>
+    <td>No</td>
+    <td>Last name</td>
+</tr>
+
+<tr>
+    <td>user_email</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>A valid email</td>
+</tr>
+
+<tr>
+    <td>user_password</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Password</td>
+</tr>
+
+<tr>
+    <td>user_is_active</td>
+    <td>int</td>
+    <td>Yes</td>
+    <td>1 || 0</td>
+</tr>
+
+<tr>
+    <td>user_profile_location</td>
+    <td>string</td>
+    <td>No</td>
+    <td>User location (city, country, etc)</td>
+</tr>
+
+<tr>
+    <td>user_acl_role</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Acl role (Administrator, Guest, etc)</td>
+</tr>
+    </tbody>
+</table>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox19">
+                    <div class="row">
+                        <div class="col-md-12">
+                        
+        <div class="col-md-6">
+    Headers
+    <hr/>
+    <div class="headers">
+    
+    </div>
+    </div>
+    <div class="col-md-6">
+<form enctype="application/x-www-form-urlencoded" role="form" action="/users" method="post" name="form19" id="form19">
+    
+    Parameters
+    <hr/>
+    
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="user_first_name" placeholder="user_first_name" name="user_first_name">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="user_last_name" placeholder="user_last_name" name="user_last_name">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="user_email" placeholder="user_email" name="user_email">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="user_password" placeholder="user_password" name="user_password">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="user_is_active" placeholder="user_is_active" name="user_is_active">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="user_profile_location" placeholder="user_profile_location" name="user_profile_location">
+</div>
+
+<div class="form-group">
+    <input type="text" class="form-control input-sm" id="user_acl_role" placeholder="user_acl_role" name="user_acl_role">
+</div>
+    <button type="submit" class="btn btn-success send" rel="19">Send</button>
+</form></div>
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers19"></pre>
+                                <pre id="response19"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample19">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+<pre id="sample_resp_header19">HTTP 200 OK</pre>
+                            
+
+<hr>
+<pre id="sample_response19">{
+    'id':1,
+    'user_first_name':'John',
+    'user_last_name':'Doe',
+    'user_email':'johndoe@domain.tld',
+    'user_is_active':1,
+    'user_created_at':'2015-03-01 19:17:09',
+    'user_updated_at':'2015-03-01 19:17:09',
+    'user_profile': {
+        'id':1,
+        'user_profile_user_id':1,
+        'user_profile_location':'Barcelona, Spain',
+        'user_profile_created_at':'2015-03-01 19:17:09',
+        'user_profile_updated_at':'2015-03-01 19:17:09',
+    }
+ }</pre>
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+        </div>
+        <hr>
+
+        <div class="row mt0 footer">
+            <div class="col-md-6" align="left">
+                Generated on 2015-03-12, 16:49:49
+            </div>
+            <div class="col-md-6" align="right">
+                <a href="https://github.com/calinrada/php-apidoc" target="_blank">php-apidoc v 1.3.4</a>
+            </div>
+        </div>
+
+    </div> <!-- /container -->
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    function syntaxHighlight(json) {
+        if (typeof json != 'string') {
+            json = JSON.stringify(json, undefined, 2);
+        }
+        json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function(match) {
+            var cls = 'number';
+            if (/^"/.test(match)) {
+                if (/:$/.test(match)) {
+                    cls = 'key';
+                } else {
+                    cls = 'string';
+                }
+            } else if (/true|false/.test(match)) {
+                cls = 'boolean';
+            } else if (/null/.test(match)) {
+                cls = 'null';
+            }
+            return '<span class="' + cls + '">' + match + '</span>';
+        });
+    }
+
+    var storage = (function() {
+        var uid = new Date;
+        var storage;
+        var result;
+        try {
+            (storage = window.localStorage).setItem(uid, uid);
+            result = storage.getItem(uid) == uid;
+            storage.removeItem(uid);
+            return result && storage;
+        } catch (exception) {}
+    }());
+
+    $.fn.serializeObject = function()
+    {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+            if(!this.value) {
+                return;
+            }
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+
+    $(document).ready(function() {
+
+        if (storage) {
+            $('#basic_auth_username').val(storage.getItem('basicAuthUsername'));
+            $('#basic_auth_password').val(storage.getItem('basicAuthPassword'));
+            $('#apikey_key').val(storage.getItem('apiKey'));
+            $('#apikey_value').val(storage.getItem('apiKeyValue'));
+        }
+
+        $('#php-apidoctab a').click(function(e) {
+            e.preventDefault()
+            $(this).tab('show')
+        });
+
+        $('.tooltipP').tooltip({
+            placement: 'bottom'
+        });
+
+        $('code[id^=response]').hide();
+
+        $.each($('pre[id^=sample_response],pre[id^=sample_post_body]'), function() {
+            if ($(this).html() == 'NA') {
+                return;
+            }
+            var str = JSON.stringify(JSON.parse($(this).html().replace(/'/g, '"')), undefined, 2);
+            $(this).html(syntaxHighlight(str));
+        });
+
+        $("[data-toggle=popover]").popover({placement:'right'});
+
+        $('body').on('shown.bs.popover', function() {
+            var $sample = $(this).find(".popover-content");
+            if ($sample.html() == 'NA') {
+                return;
+            }
+            var str = JSON.stringify(JSON.parse($sample.html().replace(/'/g, '"')), undefined, 2);
+            $sample.html('<pre>' + syntaxHighlight(str) + '</pre>');
+        });
+
+        $('body').on('click', '#save_auth_data', function(e) {
+            if (storage) {
+                storage.setItem('basicAuthUsername', $('#basic_auth_username').val());
+                storage.setItem('basicAuthPassword', $('#basic_auth_password').val());
+                storage.setItem('apiKey', $('#apikey_key').val());
+                storage.setItem('apiKeyValue', $('#apikey_value').val());
+            } else {
+                alert('Your browser does not support local storage');
+            }
+        });
+
+        $('body').on('click', '.send', function(e) {
+            e.preventDefault();
+            var form = $(this).closest('form');
+            //added /g to get all the matched params instead of only first
+            var matchedParamsInRoute = $(form).attr('action').match(/[^{]+(?=\})/g);
+            var theId = $(this).attr('rel');
+            //keep a copy of action attribute in order to modify the copy
+            //instead of the initial attribute
+            var url = $(form).attr('action');
+
+            //get form serialized data in order to remove matchedParams
+            var serializedData = $(form).serializeObject();
+
+            var index, key, value;
+
+            if(matchedParamsInRoute) {
+                for (index = 0; index < matchedParamsInRoute.length; ++index) {
+                    try {
+                        key = matchedParamsInRoute[index];
+                        value = serializedData[key];
+                        if (typeof value == "undefined") value ="";
+                        url = url.replace("{" + key + "}", value);
+                        delete serializedData[key];
+                    } catch (err) {
+                        console.log(err);
+                    }
+                }
+            }
+
+            var st_headers = {};
+
+            var basicAuthUsername = $('#basic_auth_username').val();
+            var basicAuthPassword = $('#basic_auth_password').val();
+            var apiKey = $('#apikey_key').val();
+            var apiKeyValue = $('#apikey_value').val();
+
+            if(apiKey.length > 0 && apiKeyValue.length > 0) {
+                st_headers[apiKey] = apiKeyValue;
+            }
+
+            if (basicAuthUsername != '' && basicAuthPassword != '') {
+                st_headers['Authorization'] = "Basic " + btoa(basicAuthUsername + ":" + basicAuthPassword);
+            }
+
+            $("#sandbox" + theId + " .headers input[type=text]").each(function() {
+                val = $(this).val();
+                if(val.length > 0) {
+                    st_headers[$(this).prop('name')] = val;
+                }
+            });
+
+            $.ajax({
+                url: $('#apiUrl').val() + url,
+                data: serializedData,
+                type: $(form).attr('method') + '',
+                dataType: 'json',
+                headers: st_headers,
+                success: function(data, textStatus, xhr) {
+                    if (typeof data === 'object') {
+                        var str = JSON.stringify(data, null, 2);
+                        $('#response' + theId).html(syntaxHighlight(str));
+                    } else {
+                        $('#response' + theId).html(data);
+                    }
+                    $('#response_headers' + theId).html('HTTP ' + xhr.status + ' ' + xhr.statusText + '<br/><br/>' + xhr.getAllResponseHeaders());
+                    $('#response' + theId).show();
+                },
+                error: function(xhr, textStatus, error) {
+                    var str = JSON.stringify($.parseJSON(xhr.responseText), null, 2);
+                    $('#response_headers' + theId).html('HTTP ' + xhr.status + ' ' + xhr.statusText + '<br/><br/>' + xhr.getAllResponseHeaders());
+                    $('#response' + theId).html(syntaxHighlight(str));
+                    $('#response' + theId).show();
+
+                }
+            });
+            return false;
+        });
+    });
+    </script>
+</body>
+</html>

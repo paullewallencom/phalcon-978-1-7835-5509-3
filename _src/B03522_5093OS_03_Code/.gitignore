@@ -1,0 +1,8 @@
+.buildpath
+.project
+.settings
+cache
+logs
+vendor
+composer.phar
+public/assets/default/bower_components
